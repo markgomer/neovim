@@ -8,6 +8,10 @@ require("vimarco.which-key")
 require("vimarco.neotree")
 require("vimarco.theme")
 require("vimarco.treesitter")
+require("vimarco.diagnostics")
+require("vimarco.gitsigns")
+require("vimarco.mini")
+require("vimarco.statusline")
 
 vim.g.have_nerd_font = true
 if vim.g.have_nerd_font then vim.pack.add { gh 'nvim-tree/nvim-web-devicons' } end
