@@ -2,7 +2,7 @@ vim.opt.hlsearch = false -- highlight search
 vim.opt.colorcolumn = "80" -- the limit black bar
 vim.opt.wrap = true
 vim.opt.conceallevel = 0
-vim.opt.number = true -- Print line number
+vim.opt.number = true -- line number
 vim.o.relativenumber = false
 
 vim.opt.clipboard = ""

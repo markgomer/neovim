@@ -30,3 +30,5 @@ vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = 'Find Recent Files 
 vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'Find Commands' })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Find existing buffers' })
 vim.keymap.set({ 'n', 'v' }, '<leader>fw', builtin.grep_string, { desc = 'Find current Word' })
+
+
