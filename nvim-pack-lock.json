@@ -13,6 +13,10 @@
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
       "version": "3.0.0 - 4.0.0"
     },
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
+    },
     "nui.nvim": {
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
@@ -45,6 +49,10 @@
     "todo-comments.nvim": {
       "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
       "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "tokyonight.nvim": {
+      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
+      "src": "https://github.com/folke/tokyonight.nvim"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
