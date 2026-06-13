@@ -2,6 +2,7 @@ print("HELLO FROM VIMARCO")
 
 function gh(repo) return 'https://github.com/' .. repo end
 
+require("vimarco.options")
 require("vimarco.keymap")
 require("vimarco.which-key")
 require("vimarco.telescope")
