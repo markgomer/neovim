@@ -2,6 +2,12 @@
 vim.pack.add { gh 'j-hui/fidget.nvim' }
 require('fidget').setup {}
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "c", "cpp" }, -- could be "*" for everything
+    callback = function()
+        vim.cmd("lsp enable")
+    end,
+})
 
 --  This function gets run when an LSP attaches to a particular buffer.
 --    That is to say, every time a new file is opened that is associated with
