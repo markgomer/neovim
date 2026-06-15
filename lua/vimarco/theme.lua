@@ -35,8 +35,8 @@ require("tokyonight").setup({
         variables = {},
     },
     on_highlights = function(hl, _)
-        hl["@variable"] = { fg = "#F050F0" }
-        hl["@tag.tsx"] = { fg = "#F050F0" }
+        hl["@variable"] = { fg = "#F0A0F0" }
+        hl["@tag.tsx"] = { fg = "#F0A0F0" }
         -- hl["@variable.builtin"]   = { fg = dark_red }
         -- hl["@variable.member"]    = { fg = dark_red }
         -- hl["@variable.parameter"] = { fg = dark_red }
@@ -62,6 +62,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         vim.api.nvim_set_hl(0, "TelescopePromptBorder",  { bg = "none" })
         vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "none" })
         vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "none" })
+        vim.api.nvim_set_hl(0, "SnacksPickerTree", { bg = "none" })
     end,
 })
 
