@@ -1,6 +1,5 @@
 vim.pack.add { gh "folke/snacks.nvim" }
 
-
 require("snacks").setup({
     bigfile = { enabled = true },
     dashboard = { enabled = true },
