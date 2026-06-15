@@ -5,14 +5,14 @@ require("vimarco.keymap")
 require("vimarco.vimpack")
 require("vimarco.snacks")
 require("vimarco.theme")
-require("vimarco.telescope")
+-- require("vimarco.telescope")
 require("vimarco.which-key")
 require("vimarco.treesitter")
 require("vimarco.lsp")
 require("vimarco.diagnostics")
 require("vimarco.gitsigns")
 -- require("vimarco.mini")
-require("vimarco.statusline")
+-- require("vimarco.statusline")
 
 vim.g.have_nerd_font = true
 if vim.g.have_nerd_font then vim.pack.add { gh 'nvim-tree/nvim-web-devicons' } end
