@@ -139,7 +139,7 @@ init = function()
                     dd(...)
                 end
             else
-                vim.print = _G.dd 
+                vim.print = _G.dd
             end
 
             -- Create some toggle mappings
