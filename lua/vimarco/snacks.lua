@@ -5,7 +5,7 @@ require("snacks").setup({
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     explorer = { enabled = false },
-    indent = { enabled = false },
+    indent = { enabled = true },
     input = { enabled = true },
     notifier = {
         enabled = true,
@@ -13,6 +13,8 @@ require("snacks").setup({
     },
     picker = {
         enabled = true,
+        ignored = true,
+        hidden = true,
         win = {
             input = {
                 keys = {
@@ -26,7 +28,11 @@ require("snacks").setup({
                     ["<Tab>"] = { "list_down", mode = { "i", "n" } },
                 }
             }
-        }
+        },
+        sources = { explorer = { layout = { layout = { width = 25, min_width = 25 } } },
+            files = { hidden = true, ignored = false, },
+            grep = { hidden = true, ignored = false, },
+        },
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
