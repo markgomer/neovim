@@ -9,7 +9,6 @@ require("vimarco.which-key")
 require("vimarco.treesitter")
 require("vimarco.lsp")
 require("vimarco.blink")
-require("vimarco.diagnostics")
 require("vimarco.gitsigns")
 require("vimarco.bufferline")
 
