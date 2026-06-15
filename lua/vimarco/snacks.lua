@@ -1,6 +1,45 @@
 vim.pack.add { gh "folke/snacks.nvim" }
 
 
+require("snacks").setup({
+    bigfile = { enabled = true },
+    dashboard = { enabled = true },
+    explorer = { enabled = false },
+    indent = { enabled = false },
+    input = { enabled = true },
+    notifier = {
+        enabled = true,
+        timeout = 4000,
+    },
+    picker = {
+        enabled = true,
+        win = {
+            input = {
+                keys = {
+                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                }
+            },
+            list = {
+                keys = {
+                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                }
+            }
+        }
+    },
+    quickfile = { enabled = true },
+    scope = { enabled = true },
+    scroll = { enabled = false },
+    statuscolumn = { enabled = true },
+    words = { enabled = true },
+    styles = {
+        notification = {
+            wo = { wrap = true } -- Wrap notifications
+        }
+    },
+})
+
 local function setup_snacks_keys()
     local map = vim.keymap.set
     local s = Snacks
@@ -55,7 +94,7 @@ local function setup_snacks_keys()
     map("n", "gd",  function() s.picker.lsp_definitions() end,     { desc = "Goto Definition" })
     map("n", "gD",  function() s.picker.lsp_declarations() end,    { desc = "Goto Declaration" })
     map("n", "gr",  function() s.picker.lsp_references() end,      { desc = "References", nowait = true })
-    map("n", "gI",  function() s.picker.lsp_implementations() end, { desc = "Goto Implementation" })
+    map("n", "gi",  function() s.picker.lsp_implementations() end, { desc = "Goto Implementation" })
     map("n", "gy",  function() s.picker.lsp_type_definitions() end,{ desc = "Goto T[y]pe Definition" })
     map("n", "gai", function() s.picker.lsp_incoming_calls() end,  { desc = "Calls Incoming" })
     map("n", "gao", function() s.picker.lsp_outgoing_calls() end,  { desc = "Calls Outgoing" })
@@ -121,43 +160,5 @@ end
 
 
 
-require("snacks").setup({
-    bigfile = { enabled = true },
-    dashboard = { enabled = true },
-    explorer = { enabled = false },
-    indent = { enabled = false },
-    input = { enabled = true },
-    notifier = {
-        enabled = true,
-        timeout = 10000,
-    },
-    picker = {
-        enabled = true,
-        win = {
-            input = {
-                keys = {
-                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
-                }
-            },
-            list = {
-                keys = {
-                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
-                }
-            }
-        }
-    },
-    quickfile = { enabled = true },
-    scope = { enabled = true },
-    scroll = { enabled = false },
-    statuscolumn = { enabled = true },
-    words = { enabled = true },
-    styles = {
-        notification = {
-            wo = { wrap = true } -- Wrap notifications
-        }
-    },
-})
 
 setup_snacks_keys()
