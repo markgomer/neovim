@@ -13,11 +13,11 @@ require("bufferline").setup{
     }
 }
 
-vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<S-H>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Left buffer" })
-vim.keymap.set("n", "<leader>h", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
+vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
 vim.keymap.set("n", "<S-L>", "<cmd>BufferLineCycleNext<cr>", { desc = "Right buffer" })
-vim.keymap.set("n", "<leader>l", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
+vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
 vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
 
