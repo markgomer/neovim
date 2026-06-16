@@ -2,17 +2,19 @@ function gh(repo) return 'https://github.com/' .. repo end
 
 require("vimarco.options")
 require("vimarco.keymap")
-require("vimarco.vimpack")
-require("vimarco.snacks")
 require("vimarco.theme")
+
+require("vimarco.snacks")
+
 require("vimarco.which-key")
 require("vimarco.treesitter")
 require("vimarco.lsp")
 require("vimarco.blink")
+require("vimarco.formatter")
 require("vimarco.gitsigns")
 require("vimarco.bufferline")
-require("vimarco.formatter")
 require("vimarco.obsidian")
+require("vimarco.vimpack")
 
 vim.g.have_nerd_font = true
 if vim.g.have_nerd_font then vim.pack.add { gh 'nvim-tree/nvim-web-devicons' } end

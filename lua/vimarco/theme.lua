@@ -1,8 +1,9 @@
 vim.pack.add { gh "rebelot/kanagawa.nvim" }
 vim.pack.add { gh "folke/tokyonight.nvim" }
 vim.pack.add { gh "rose-pine/neovim" }
+vim.pack.add { gh "catppuccin/nvim" }
 
-vim.cmd.colorscheme 'tokyonight-moon'
+local ACTIVE_THEME = "tokyonight-moon"
 
 require('kanagawa').setup({
     transparent = true,
@@ -27,7 +28,6 @@ require("tokyonight").setup({
     styles = {
         sidebars = "transparent",
         floats = "transparent",
-        -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
         keywords = { italic = true },
@@ -35,12 +35,8 @@ require("tokyonight").setup({
         variables = {},
     },
     on_highlights = function(hl, _)
-        hl["@variable"] = { fg = "#F0A0F0" }
-        hl["@tag.tsx"] = { fg = "#F0A0F0" }
-        -- hl["@variable.builtin"]   = { fg = dark_red }
-        -- hl["@variable.member"]    = { fg = dark_red }
-        -- hl["@variable.parameter"] = { fg = dark_red }
-        -- hl["Identifier"]          = { fg = dark_red }
+        hl["@variable"] = { fg = "#F090E0" }
+        hl["@tag.tsx"] = { fg = "#F090E0" }
     end,
 })
 
@@ -53,6 +49,48 @@ require("rose-pine").setup({
     },
 })
 
+require("catppuccin").setup({
+    flavour = "auto", -- auto, latte, frappe, macchiato, mocha
+    transparent_background = true,
+    float = {
+        transparent = true, -- enable transparent floating windows
+        solid = false, -- use solid styling for floating windows, see |winborder|
+    },
+    lsp_styles = {
+        underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+        },
+    },
+    integrations = {
+        aerial = true,
+        alpha = true,
+        cmp = true,
+        dashboard = true,
+        flash = true,
+        fzf = true,
+        grug_far = true,
+        gitsigns = true,
+        headlines = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
+        leap = true,
+        lsp_trouble = true,
+        mason = true,
+        mini = true,
+        navic = { enabled = true, custom_bg = "lualine" },
+        neotest = true,
+        neotree = true,
+        noice = true,
+        notify = true,
+        snacks = true,
+        telescope = true,
+        treesitter_context = true,
+        which_key = true,
+    },
+})
 
 -- Fire transparency components AFTER all plugins init
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -66,3 +104,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+
+
+vim.cmd.colorscheme (ACTIVE_THEME)

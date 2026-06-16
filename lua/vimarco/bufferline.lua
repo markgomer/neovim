@@ -1,17 +1,26 @@
 vim.pack.add { gh 'nvim-tree/nvim-web-devicons' }
 vim.pack.add { gh "akinsho/bufferline.nvim" }
 
-require("bufferline").setup{
+local bufferline_opts = {
     options = {
         numbers = "ordinal",
         show_tab_indicators = true,
-        persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+        persist_buffer_sort = true,
         sort_by = 'insert_at_end',
         pick = {
             alphabet = "1234567890ABCDEF",
         },
     }
 }
+
+if (vim.g.colors_name or ""):find("catppuccin") then
+    local ok, cat_bl = pcall(require, "catppuccin.special.bufferline")
+    if ok then
+        bufferline_opts.highlights = cat_bl.get_theme()
+    end
+end
+
+require("bufferline").setup(bufferline_opts)
 
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<S-H>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Left buffer" })
