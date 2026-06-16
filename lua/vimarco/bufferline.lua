@@ -30,6 +30,7 @@ vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>", { desc = "Move 
 vim.keymap.set("n", "<leader>bb", "<cmd>bp<cr>", { desc = "Last buffer" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
 
 vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to buffer 1" })
