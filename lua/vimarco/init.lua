@@ -14,6 +14,7 @@ require("vimarco.formatter")
 require("vimarco.gitsigns")
 require("vimarco.bufferline")
 require("vimarco.obsidian")
+require("vimarco.transparent")
 require("vimarco.vimpack")
 
 vim.g.have_nerd_font = true

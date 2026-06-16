@@ -4,6 +4,7 @@ vim.opt.wrap = true
 vim.opt.conceallevel = 2
 vim.opt.number = true -- line number
 vim.o.relativenumber = false
+vim.opt.cursorline = true -- Enable highlighting of the current line
 
 vim.opt.clipboard = ""
 
