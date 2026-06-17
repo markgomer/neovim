@@ -13,13 +13,6 @@ local bufferline_opts = {
     }
 }
 
-if (vim.g.colors_name or ""):find("catppuccin") then
-    local ok, cat_bl = pcall(require, "catppuccin.special.bufferline")
-    if ok then
-        bufferline_opts.highlights = cat_bl.get_theme()
-    end
-end
-
 require("bufferline").setup(bufferline_opts)
 
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })

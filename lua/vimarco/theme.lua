@@ -4,7 +4,7 @@ vim.pack.add({ gh("rose-pine/neovim") })
 vim.pack.add({ gh("catppuccin/nvim") })
 vim.pack.add({ gh("ellisonleao/gruvbox.nvim") })
 
-local ACTIVE_THEME = "gruvbox"
+local ACTIVE_THEME = "kanagawa"
 
 require("kanagawa").setup({
 	transparent = true,
@@ -38,6 +38,8 @@ require("tokyonight").setup({
 	on_highlights = function(hl, _)
 		hl["@variable"] = { fg = "#F090E0" }
 		hl["@tag.tsx"] = { fg = "#F090E0" }
+		hl["@tag.tsx"] = { fg = "#F090E0" }
+		hl["@markup.strong.markdown_inline"] = { fg = "#F090E0" }
 	end,
 })
 
@@ -108,28 +110,5 @@ require("gruvbox").setup({
 		-- ["@comment.lua"] = { fg = "#000000" },
 	},
 })
-
--- Fire transparency components AFTER all plugins init
--- vim.api.nvim_create_autocmd("VimEnter", {
---     callback = function()
---         local groups = {
---             "Normal",
---             "NormalFloat",
---             -- "BufferLineFill",
---             -- "BufferLineBackground",
---             -- "BufferLineTabSeparator",
---             -- "BufferLineSeparator",
---             -- "BufferLineIndicatorSelected",
---             -- "BufferLineOffsetSeparator",
---             "TelescopePromptBorder",
---             "TelescopeResultsBorder",
---             "TelescopePreviewBorder",
---             "SnacksPickerTree",
---         }
---         for _, group in ipairs(groups) do
---             vim.api.nvim_set_hl(0, group, { bg = "none" })
---         end
---     end
--- })
 
 vim.cmd.colorscheme(ACTIVE_THEME)
