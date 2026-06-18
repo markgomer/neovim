@@ -16,8 +16,8 @@ local bufferline_opts = {
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
             local s = ""
             for e, n in pairs(diagnostics_dict) do
-                local sym = e == "error" and ""
-                or (e == "warning" and "" or "")
+                local sym = e == "error" and " "
+                or (e == "warning" and " " or " ")
                 s = s .. n .. sym .. ""
             end
             return s
@@ -34,10 +34,6 @@ vim.keymap.set("n", "<S-L>", "<cmd>BufferLineCycleNext<cr>", { desc = "Right buf
 vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
 vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
-
-vim.keymap.set("n", "<leader>bb", "<cmd>bp<cr>", { desc = "Last buffer" })
-vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Next buffer" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
 vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to buffer 1" })
 vim.keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to buffer 2" })
