@@ -108,7 +108,7 @@ local function setup_snacks_keys()
 
     -- Other
     map("n", "<leader>z",  function() s.zen() end,                  { desc = "Toggle Zen Mode" })
-    map("n", "<leader>Z",  function() s.zen.zoom() end,             { desc = "Toggle Zoom" })
+    map("n", "<leader>Z",  function() s.zen.zoom() end,             { desc = "Toggle Zoom (Maximize)" })
     map("n", "<leader>.",  function() s.scratch() end,              { desc = "Toggle Scratch Buffer" })
     map("n", "<leader>S",  function() s.scratch.select() end,       { desc = "Select Scratch Buffer" })
     map("n", "<leader>bd", function() s.bufdelete() end,            { desc = "Delete Buffer" })

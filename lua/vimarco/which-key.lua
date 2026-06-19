@@ -14,7 +14,8 @@ require('which-key').setup {
         { '<leader>q', group = 'Session', mode = { 'n' } },
         { '<leader>u', group = 'UI', mode = { 'n', 'v' } },
         { '<leader>x', group = 'Trouble', mode = { 'n' } },
-        -- { 'gr', group = 'LSP Actions', mode = { 'n' } },
+        { '<leader>b', group = 'Buffers', mode = { 'n' } },
+        { '<leader>d', group = 'Debugger', mode = { 'n' } },
     },
 }
 
