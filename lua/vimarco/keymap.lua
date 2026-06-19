@@ -50,7 +50,10 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decreas
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Buffer keys
-vim.keymap.set("n", "<leader>bb", "<cmd>bp<cr>", { desc = "Last buffer" })
+vim.keymap.set("n", "<leader>bb", "<cmd>bp<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
+
+-- marks
+vim.keymap.set("n", "<leader>mc", "<cmd>delmarks!<cr>", {desc="Clear current buffer marks"})
 
