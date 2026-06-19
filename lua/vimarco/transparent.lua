@@ -10,6 +10,7 @@ require("transparent").setup({
 		"Type", "Underlined", "Todo", "String", "Function", "Conditional",
 		"Repeat", "Operator", "Structure", "LineNr", "NonText", "SignColumn",
 		"StatusLine", "StatusLineNC", "EndOfBuffer", "TablineFill",
+        "MiniStatuslineFilename"
     },
 	-- table: additional groups that should be cleared
 	extra_groups = {},
@@ -19,7 +20,3 @@ require("transparent").setup({
 	-- Also the user event "TransparentClear" will be triggered
 	on_clear = function() end,
 })
-
--- require('transparent').clear_prefix('BufferLine')
--- require 'transparent'.clear_prefix("TabLine")
--- require 'transparent'.clear_prefix("SnacksPicker")
