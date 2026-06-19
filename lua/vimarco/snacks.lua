@@ -28,7 +28,8 @@ require("snacks").setup({
                 }
             }
         },
-        sources = { explorer = { layout = { layout = { width = 25, min_width = 25 } } },
+        sources = {
+            -- explorer = {layout = {layout = {width = 25, min_width = 25}}},
             files = { hidden = true, ignored = false, },
             grep = { hidden = true, ignored = false, },
         },
@@ -55,7 +56,7 @@ local function setup_snacks_keys()
     map("n", "<leader>/",       function() s.picker.grep() end,           { desc = "Grep" })
     map("n", "<leader>:",       function() s.picker.command_history() end, { desc = "Command History" })
     map("n", "<leader>n",       function() s.picker.notifications() end,  { desc = "Notification History" })
-    map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
+    -- map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
 
     -- Find
     map("n", "<leader>ff", function() s.picker.files() end,               { desc = "Find Files" })
@@ -87,7 +88,6 @@ local function setup_snacks_keys()
     map("n", "<leader>sl",  function() s.picker.loclist() end,          { desc = "Location List" })
     map("n", "<leader>sm",  function() s.picker.marks() end,            { desc = "Marks" })
     map("n", "<leader>sM",  function() s.picker.man() end,              { desc = "Man Pages" })
-    map("n", "<leader>sp",  function() s.picker.lazy() end,             { desc = "Search for Plugin Spec" })
     map("n", "<leader>sq",  function() s.picker.qflist() end,           { desc = "Quickfix List" })
     map("n", "<leader>sR",  function() s.picker.resume() end,           { desc = "Resume" })
     map("n", "<leader>ss",  function() s.picker.lsp_symbols() end,      { desc = "LSP Symbols" })
