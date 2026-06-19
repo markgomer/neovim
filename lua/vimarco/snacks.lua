@@ -1,3 +1,7 @@
+-- Highlight todo, notes, etc in comments
+vim.pack.add { gh 'folke/todo-comments.nvim' }
+require('todo-comments').setup { signs = false }
+
 vim.pack.add { gh "folke/snacks.nvim" }
 
 require("snacks").setup({
@@ -17,14 +21,12 @@ require("snacks").setup({
         win = {
             input = {
                 keys = {
-                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                    ["<Tab>"] = { "toggle_focus", mode = { "i", "n" } },
                 }
             },
             list = {
                 keys = {
-                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
-                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                    ["<Tab>"] = { "toggle_focus", mode = { "i", "n" } },
                 }
             }
         },

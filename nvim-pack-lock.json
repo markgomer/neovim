@@ -60,7 +60,8 @@
     },
     "mini.nvim": {
       "rev": "a59a9b7fb0a42cbcf022938ee5f0724320b66f63",
-      "src": "https://github.com/nvim-mini/mini.nvim"
+      "src": "https://github.com/nvim-mini/mini.nvim",
+      "version": "'stable'"
     },
     "neo-tree.nvim": {
       "rev": "83e7a2982fd12b9c3d35bc39dd5877cd91a02a61",
@@ -95,6 +96,10 @@
     "obsidian.nvim": {
       "rev": "7861be4efecb4828211d829d5b3a16e6ed8d6135",
       "src": "https://github.com/obsidian-nvim/obsidian.nvim"
+    },
+    "persistence.nvim": {
+      "rev": "b20b2a7887bd39c1a356980b45e03250f3dce49c",
+      "src": "https://github.com/folke/persistence.nvim"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
