@@ -21,12 +21,18 @@ require("snacks").setup({
         win = {
             input = {
                 keys = {
-                    ["<Tab>"] = { "toggle_focus", mode = { "i", "n" } },
+                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+                    ["<C-j>"] = { "toggle_focus", mode = { "i", "n" } },
+                    ["<C-k>"] = { "toggle_focus", mode = { "i", "n" } },
                 }
             },
             list = {
                 keys = {
-                    ["<Tab>"] = { "toggle_focus", mode = { "i", "n" } },
+                    ["<Tab>"] = { "list_down", mode = { "i", "n" } },
+                    ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
+                    ["<C-j>"] = { "toggle_focus", mode = { "i", "n" } },
+                    ["<C-k>"] = { "toggle_focus", mode = { "i", "n" } },
                 }
             }
         },
@@ -65,7 +71,7 @@ local function setup_snacks_keys()
     map("n", "<leader>fg", function() s.picker.git_files() end,           { desc = "Find Git Files" })
     map("n", "<leader>fr", function() s.picker.recent() end,              { desc = "Recent" })
     map("n", "<leader>fp", function() s.picker.projects() end,            { desc = "Projects" })
-    map("n", "<leader>fb", function() s.picker.buffers() end,             { desc = "Buffers" })
+    map("n", "<leader>bb", function() s.picker.buffers() end,             { desc = "Buffers" })
     map("n", "<leader>fc", function() s.picker.files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Find Config File" })
 
     map("n", "<leader>gg", function() s.lazygit() end,               { desc = "Lazygit" })

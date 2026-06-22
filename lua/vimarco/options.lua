@@ -4,7 +4,7 @@ vim.opt.wrap = true
 vim.opt.conceallevel = 2
 vim.opt.number = true -- line number
 vim.o.relativenumber = true
-vim.opt.cursorline = true -- Enable highlighting of the current line
+vim.opt.cursorline = false
 
 vim.opt.clipboard = ""
 
@@ -15,7 +15,7 @@ vim.opt.softtabstop = tabstop
 vim.opt.shiftwidth = tabstop
 vim.opt.expandtab = true -- Use spaces instead of tabs by default
 
-vim.o.scrolloff = 10
+vim.o.scrolloff = 6
 
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.showmode = false -- Dont show mode since we have a statusline

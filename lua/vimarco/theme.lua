@@ -7,11 +7,13 @@ vim.pack.add({ gh("ellisonleao/gruvbox.nvim") })
 local ACTIVE_THEME = "kanagawa"
 
 require("kanagawa").setup({
+    terminalColors = true,
 	transparent = true,
 	commentStyle = { italic = true },
-	functionStyle = { italic = true },
+	functionStyle = { },
 	keywordStyle = { italic = true },
 	statementStyle = { bold = true },
+    typeStyle = { italic = true },
 	colors = {
 		theme = {
 			all = {
@@ -104,8 +106,8 @@ require("gruvbox").setup({
 		folds = true,
 	},
 	overrides = {
-		["@markup.strong.markdown_inline"] = { fg = "#FF9900" },
-		["@lsp.type.method"] = { fg = "#ff9900" },
+		-- ["@markup.strong.markdown_inline"] = { fg = "#FF9900" },
+		-- ["@lsp.type.method"] = { fg = "#ff9900" },
 		-- ["@comment.lua"] = { fg = "#000000" },
 	},
 })
