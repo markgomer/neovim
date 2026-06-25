@@ -7,7 +7,7 @@ vim.pack.add { gh "folke/snacks.nvim" }
 require("snacks").setup({
     bigfile = { enabled = true },
     dashboard = { enabled = false },
-    explorer = { enabled = false },
+    explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -37,7 +37,7 @@ require("snacks").setup({
             }
         },
         sources = {
-            -- explorer = {layout = {layout = {width = 25, min_width = 25}}},
+            explorer = {layout = {layout = {width = 25, min_width = 25}}},
             files = { hidden = true, ignored = false, },
             grep = { hidden = true, ignored = false, },
         },
@@ -64,7 +64,7 @@ local function setup_snacks_keys()
     map("n", "<leader>/",       function() s.picker.grep() end,           { desc = "Grep" })
     map("n", "<leader>:",       function() s.picker.command_history() end, { desc = "Command History" })
     map("n", "<leader>n",       function() s.picker.notifications() end,  { desc = "Notification History" })
-    -- map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
+    map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
 
     -- Find
     map("n", "<leader>ff", function() s.picker.files() end,               { desc = "Find Files" })
@@ -97,7 +97,7 @@ local function setup_snacks_keys()
     map("n", "<leader>sm",  function() s.picker.marks() end,            { desc = "Marks" })
     map("n", "<leader>sM",  function() s.picker.man() end,              { desc = "Man Pages" })
     map("n", "<leader>sq",  function() s.picker.qflist() end,           { desc = "Quickfix List" })
-    map("n", "<leader>sR",  function() s.picker.resume() end,           { desc = "Resume" })
+    map("n", "<leader>s.",  function() s.picker.resume() end,           { desc = "Resume" })
     map("n", "<leader>ss",  function() s.picker.lsp_symbols() end,      { desc = "LSP Symbols" })
     map("n", "<leader>sS",  function() s.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
     map("n", "<leader>su",  function() s.picker.undo() end,             { desc = "Undo History" })

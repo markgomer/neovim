@@ -3,7 +3,7 @@ vim.opt.colorcolumn = "80" -- the limit black bar
 vim.opt.wrap = true
 vim.opt.conceallevel = 2
 vim.opt.number = true -- line number
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.opt.cursorline = false
 
 vim.opt.clipboard = ""
