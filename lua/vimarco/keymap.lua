@@ -54,6 +54,3 @@ vim.keymap.set("n", "<leader>h", "<cmd>bp<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>l", "<cmd>bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
 
--- marks
-vim.keymap.set("n", "<leader>mc", "<cmd>delmarks!<cr>", {desc="Clear current buffer marks"})
-
