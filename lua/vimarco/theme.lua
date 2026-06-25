@@ -18,7 +18,15 @@ require("kanagawa").setup({
 		theme = {
 			all = {
 				ui = {
-					bg_gutter = "none",
+                    float = { bg = "none", bg_border = "none" },
+					bg_gutter  = "none",
+                    bg_dim     = "none",
+                    bg_m3      = "none",
+                    bg_m2      = "none",
+                    bg_m1      = "none",
+                    bg         = "none",
+                    bg_p1      = "none",
+                    bg_p2      = "none",
 				},
 			},
 		},
