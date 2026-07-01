@@ -21,3 +21,6 @@ vim.opt.laststatus = 3 -- global statusline
 vim.opt.showmode = false -- Dont show mode since we have a statusline
 
 vim.opt.termguicolors = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
