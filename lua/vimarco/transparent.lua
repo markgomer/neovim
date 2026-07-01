@@ -5,10 +5,6 @@ require("transparent").setup({
 	groups = {
 		"Normal",
 		"NormalNC",
-		"NormalFloat",
-        "Float",
-		"FloatBorder",
-		"FloatTitle",
 		"Comment",
 		"Constant",
 		"Special",
@@ -30,14 +26,25 @@ require("transparent").setup({
 		"StatusLine",
 		"StatusLineNC",
 		"EndOfBuffer",
-		"TablineFill",
 	},
 	-- table: additional groups that should be cleared
-	extra_groups = {},
+	extra_groups = {
+        "NormalFloat",
+        "Float",
+		"FloatBorder",
+		"FloatTitle",
+		"TablineFill",
+        "StatusLineTerm",
+    },
 	-- table: groups you don't want to clear
 	exclude_groups = {},
 	-- function: code to be executed after highlight groups are cleared
 	-- Also the user event "TransparentClear" will be triggered
-	on_clear = function() end,
+	on_clear = function()
+        vim.cmd "TransparentEnable"
+    end,
 })
-vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { bg = "none" })
+require('transparent').clear_prefix("MiniStatuslineFilename")
+require('transparent').clear_prefix("MiniStatuslineInactive")
+
