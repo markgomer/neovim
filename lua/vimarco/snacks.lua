@@ -7,7 +7,7 @@ vim.pack.add { gh "folke/snacks.nvim" }
 require("snacks").setup({
     bigfile = { enabled = true },
     dashboard = { enabled = false },
-    explorer = { enabled = true },
+    explorer = { enabled = false },
     indent = { enabled = true },
     input = { enabled = true },
     notifier = {
@@ -37,7 +37,7 @@ require("snacks").setup({
             }
         },
         sources = {
-            explorer = {layout = {layout = {width = 25, min_width = 25}}},
+            -- explorer = {layout = {layout = {width = 25, min_width = 25}}},
             files = { hidden = true, ignored = false, },
             grep = { hidden = true, ignored = false, },
         },
@@ -64,7 +64,7 @@ local function setup_snacks_keys()
     map("n", "<leader>/",       function() s.picker.grep() end,           { desc = "Grep" })
     map("n", "<leader>:",       function() s.picker.command_history() end, { desc = "Command History" })
     map("n", "<leader>n",       function() s.picker.notifications() end,  { desc = "Notification History" })
-    map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
+    -- map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
 
     -- Find
     map("n", "<leader>ff", function() s.picker.files() end,               { desc = "Find Files" })
