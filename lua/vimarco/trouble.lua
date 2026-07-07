@@ -1,19 +1,36 @@
 vim.pack.add { gh "folke/trouble.nvim" }
 
-require("trouble").setup()
+require("trouble").setup({
+    modes = {
+        diagnostics = { -- or any other mode name
+            win = {
+                wo = {
+                    wrap = true,
+                },
+            },
+        },
+    },
+})
 
 -- DIAGNOSTICS
 vim.diagnostic.config({
-    virtual_text = true, -- This puts diagnostic inline with code
+    virtual_text = false, -- This puts diagnostic inline with code
+    virtual_lines = false,
+    underline = true,
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN]  = " ",
-            [vim.diagnostic.severity.HINT]  = "󰌵 ",
-            [vim.diagnostic.severity.INFO]  = " ",
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN]  = "",
+            [vim.diagnostic.severity.HINT]  = "󰌵",
+            [vim.diagnostic.severity.INFO]  = "",
         },
     }
 })
+
+vim.keymap.set('n', '<leader>xl', function()
+    local current = vim.diagnostic.config().virtual_lines
+    vim.diagnostic.config({ virtual_lines = not current })
+end, { desc = "Toggle diagnostic virtual lines" })
 
 vim.keymap.set(
     "n",

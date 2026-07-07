@@ -20,6 +20,7 @@ require("snacks").setup({
         hidden = true,
         win = {
             input = {
+                wo = { wrap = true }, -- Wrap text in input window
                 keys = {
                     ["<Tab>"] = { "list_down", mode = { "i", "n" } },
                     ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
@@ -28,13 +29,15 @@ require("snacks").setup({
                 }
             },
             list = {
+                wo = { wrap = true },  -- Wrap text in list window
                 keys = {
                     ["<Tab>"] = { "list_down", mode = { "i", "n" } },
                     ["<S-Tab>"] = { "list_up", mode = { "i", "n" } },
                     ["<C-j>"] = { "toggle_focus", mode = { "i", "n" } },
                     ["<C-k>"] = { "toggle_focus", mode = { "i", "n" } },
                 }
-            }
+            },
+            preview = { wo = { wrap = true } }, -- Wrap text in preview window
         },
         sources = {
             -- explorer = {layout = {layout = {width = 25, min_width = 25}}},
