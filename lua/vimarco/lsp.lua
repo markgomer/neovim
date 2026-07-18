@@ -52,7 +52,6 @@ local servers = {
 	-- ts_ls = {},
 	stylua = {}, -- Used to format Lua code
 	-- pyright = {},
-	-- rust_analyzer = {},
 
 	-- Special Lua Config, as recommended by neovim help docs
 	-- lua_ls = {
@@ -98,20 +97,30 @@ vim.pack.add({
 	gh("neovim/nvim-lspconfig"),
 	gh("mason-org/mason.nvim"),
 	gh("mason-org/mason-lspconfig.nvim"),
-	gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
+	-- gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
 })
 
 -- Automatically install LSPs and related tools to stdpath for Neovim
 require("mason").setup({})
 
-local ensure_installed = vim.tbl_keys(servers or {})
-vim.list_extend(ensure_installed, {
-	-- You can add other tools here that you want Mason to install
+require("mason-lspconfig").setup({
+    ensure_installed = vim.tbl_keys(servers or {}),
+    handlers = {
+        function(server_name)
+            -- Only setup and enable servers explicitly listed in the `servers` table
+            if servers[server_name] then
+                vim.lsp.config(server_name, servers[server_name])
+                vim.lsp.enable(server_name)
+            end
+        end,
+    }
 })
 
-require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
-for name, server in pairs(servers) do
-	vim.lsp.config(name, server)
-	vim.lsp.enable(name)
+-- disabled
+function ensure_installed()
+    local ensure_installed = vim.tbl_keys(servers or {})
+    vim.list_extend(ensure_installed, {
+        -- You can add other tools here that you want Mason to install
+    })
+    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 end
