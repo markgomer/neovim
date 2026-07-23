@@ -46,8 +46,8 @@ require("tokyonight").setup({
 		variables = {},
 	},
 	on_highlights = function(hl, _)
-		hl["@variable"] = { fg = "#F090E0" }
-		hl["@tag.tsx"] = { fg = "#F090E0" }
+		-- hl["@variable"] = { fg = "#F090E0" }
+		-- hl["@tag.tsx"] = { fg = "#F090E0" }
 		hl["@markup.strong.markdown_inline"] = { fg = "#F090E0" }
 	end,
 })
