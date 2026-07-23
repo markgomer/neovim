@@ -24,3 +24,25 @@ vim.opt.termguicolors = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+
+-- STATUS LINE
+
+local function git_branch()
+    local branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("\n", "")
+    return branch ~= "" and ("  " .. branch .. " ") or ""
+end
+
+-- Make the function accessible to statusline's %{} syntax
+_G.git_branch = git_branch
+
+local statusline = {
+    "%{%expand('%:p:h:t')%}/",  -- folder above
+    "%t",                       -- File name
+    " %m%r",                    -- Modified/Read-only indicator
+    " %{%v:lua.git_branch()%}", -- git branch
+    "%=",                       -- Separation point (align right)
+    " %l/%L:%c "                -- Current/Total lines : Column
+}
+
+vim.opt.statusline = table.concat(statusline, "")

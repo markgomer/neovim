@@ -14,7 +14,6 @@ require("vimarco.keymap")
 require("vimarco.theme")
 
 require("vimarco.snacks")
-require("vimarco.mini")
 
 require("vimarco.which-key")
 require("vimarco.treesitter")
