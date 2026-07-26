@@ -1,3 +1,17 @@
+local function git_diff()
+  local gs = vim.b.gitsigns_status_dict
+  if not gs then return "" end
+
+  local str = ""
+  if (gs.added or 0) > 0 then str = str .. " +" .. gs.added end
+  if (gs.changed or 0) > 0 then str = str .. " ~" .. gs.changed end
+  if (gs.removed or 0) > 0 then str = str .. " -" .. gs.removed end
+
+  return str ~= "" and (str .. " ") or ""
+end
+
+_G.git_diff = git_diff
+
 local function update_git_branch()
   local branch = vim.fn.system("git branch --show-current 2>/dev/null"):gsub("\n", "")
   vim.b.git_branch = branch ~= "" and ("  " .. branch .. " ") or ""
@@ -49,6 +63,7 @@ local statusline = {
     -- "%l/%L:%c", -- row/col number 
     " %{%v:lua.lsp_diagnostics()%}", -- diagnostics
     " %{%v:lua.git_branch()%}",
+    "|%{%v:lua.git_diff()%}",
 }
 
 vim.opt.statusline = table.concat(statusline, "")
