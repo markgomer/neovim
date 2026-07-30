@@ -5,9 +5,7 @@ function gh(repo) return 'https://github.com/' .. repo end
 
 vim.pack.add { gh 'nvim-tree/nvim-web-devicons' }
 
-vim.pack.add({
-    { src = gh "nvim-mini/mini.nvim", version = "stable" },
-})
+vim.pack.add({ gh 'nvim-mini/mini.nvim' })
 
 require("vimarco.options")
 require("vimarco.keymap")
@@ -20,7 +18,8 @@ require("vimarco.treesitter")
 require("vimarco.lsp")
 require("vimarco.blink")
 require("vimarco.trouble")
-require("vimarco.statusline")
+-- require("vimarco.statusline")
+require("vimarco.mini")
 require("vimarco.formatter")
 require("vimarco.gitsigns")
 require("vimarco.obsidian")

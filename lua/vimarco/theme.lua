@@ -10,10 +10,10 @@ require("kanagawa").setup({
     terminalColors = true,
 	transparent = true,
 	commentStyle = { italic = true },
-	functionStyle = { },
+	functionStyle = { italic = true },
 	keywordStyle = { italic = true },
 	statementStyle = { bold = true },
-    typeStyle = { italic = true },
+    typeStyle = { bold = true },
 	colors = {
 		theme = {
 			all = {
@@ -25,7 +25,7 @@ require("kanagawa").setup({
                     bg_m2      = "none",
                     bg_m1      = "none",
                     bg         = "none",
-                    bg_p1      = "none",
+                    -- bg_p1      = "none",
                     bg_p2      = "none",
 				},
 			},
