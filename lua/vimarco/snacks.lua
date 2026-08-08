@@ -8,7 +8,7 @@ require("snacks").setup({
     bigfile = { enabled = true },
     dashboard = { enabled = false },
     explorer = { enabled = false },
-    indent = { enabled = true },
+    indent = { enabled = false },
     input = { enabled = true },
     notifier = {
         enabled = true,
@@ -62,7 +62,7 @@ local function setup_snacks_keys()
     local s = Snacks
 
     -- Top Pickers
-    map("n", "<leader>fs", function() s.picker.smart() end, { desc = "Smart Find Files" })
+    map("n", "<leader>ff", function() s.picker.smart() end, { desc = "Find Files" })
     map("n", "<leader>,", function() s.picker.buffers() end, { desc = "Buffers" })
     map("n", "<leader>/", function() s.picker.grep() end, { desc = "Grep" })
     map("n", "<leader>:", function() s.picker.command_history() end, { desc = "Command History" })
@@ -70,7 +70,7 @@ local function setup_snacks_keys()
     -- map("n", "<leader>e",       function() s.explorer() end,              { desc = "File Explorer" })
 
     -- Find
-    map("n", "<leader>ff", function() s.picker.files() end, { desc = "Find Files" })
+    map("n", "<leader>fs", function() s.picker.files() end, { desc = "[F]ind Files [Simple]" }) -- find simple
     map("n", "<leader>fg", function() s.picker.git_files() end, { desc = "Find Git Files" })
     map("n", "<leader>fr", function() s.picker.recent() end, { desc = "Recent" })
     map("n", "<leader>fp", function() s.picker.projects() end, { desc = "Projects" })
