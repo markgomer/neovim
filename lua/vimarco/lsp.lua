@@ -41,16 +41,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here.
---  They will automatically be installed.
---  See `:help lsp-config` for information about keys and how to configure
+-- Enable the following language servers.
+-- These are NOT auto-installed — install manually via :MasonInstall <name>
+-- (clangd is the exception; see mason-tool-installer block below).
 ---@type table<string, vim.lsp.Config>
 local servers = {
+	gopls = {
+		-- Explicit path avoids PATH/shim ambiguity between asdf and Mason.
+		-- Update this if you bump your asdf golang version.
+		cmd = { vim.fn.expand("$HOME/.local/share/asdf-vm/installs/golang/1.26.3/bin/gopls") },
+	},
 	clangd = {},
-	gopls = {},
 	-- ts_ls = {},
-	stylua = {}, -- Used to format Lua code
 	-- pyright = {},
 
 	-- Special Lua Config, as recommended by neovim help docs
@@ -97,30 +99,29 @@ vim.pack.add({
 	gh("neovim/nvim-lspconfig"),
 	gh("mason-org/mason.nvim"),
 	gh("mason-org/mason-lspconfig.nvim"),
-	-- gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
+	gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
 })
 
--- Automatically install LSPs and related tools to stdpath for Neovim
 require("mason").setup({})
 
+-- No ensure_installed here: every LSP in `servers` is installed manually
+-- via :MasonInstall <name>. Auto-install was the root cause of a corrupted
+-- gopls binary (install got killed mid-write by an unrelated nvim restart).
 require("mason-lspconfig").setup({
-    ensure_installed = vim.tbl_keys(servers or {}),
-    handlers = {
-        function(server_name)
-            -- Only setup and enable servers explicitly listed in the `servers` table
-            if servers[server_name] then
-                vim.lsp.config(server_name, servers[server_name])
-                vim.lsp.enable(server_name)
-            end
-        end,
-    }
+	handlers = {
+		function(server_name)
+			-- Only setup and enable servers explicitly listed in the `servers` table
+			if servers[server_name] then
+				vim.lsp.config(server_name, servers[server_name])
+				vim.lsp.enable(server_name)
+			end
+		end,
+	},
 })
 
--- disabled
-function ensure_installed()
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-        -- You can add other tools here that you want Mason to install
-    })
-    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-end
+-- Non-LSP tools you DO want auto-installed/kept up to date.
+-- stylua is a formatter, not an LSP server, so it can't go through
+-- mason-lspconfig above — it needs mason-tool-installer instead.
+require("mason-tool-installer").setup({
+	ensure_installed = { "stylua", "clangd" },
+})
