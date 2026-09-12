@@ -51,7 +51,12 @@ local servers = {
 		-- Update this if you bump your asdf golang version.
 		cmd = { vim.fn.expand("$HOME/.local/share/asdf-vm/installs/golang/1.26.3/bin/gopls") },
 	},
-	clangd = {},
+	clangd = {
+    	cmd = {
+            "clangd",
+            "--query-driver=/nix/store/**/bin/gcc,/nix/store/**/bin/*-gcc",
+        },
+    },
 	-- ts_ls = {},
 	-- pyright = {},
 
@@ -104,19 +109,13 @@ vim.pack.add({
 
 require("mason").setup({})
 
--- No ensure_installed here: every LSP in `servers` is installed manually
--- via :MasonInstall <name>. Auto-install was the root cause of a corrupted
--- gopls binary (install got killed mid-write by an unrelated nvim restart).
+
+for server_name, config in pairs(servers) do
+	vim.lsp.config(server_name, config)
+end
+
 require("mason-lspconfig").setup({
-	handlers = {
-		function(server_name)
-			-- Only setup and enable servers explicitly listed in the `servers` table
-			if servers[server_name] then
-				vim.lsp.config(server_name, servers[server_name])
-				vim.lsp.enable(server_name)
-			end
-		end,
-	},
+	automatic_enable = true,
 })
 
 -- Non-LSP tools you DO want auto-installed/kept up to date.
