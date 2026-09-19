@@ -104,7 +104,6 @@ vim.pack.add({
 	gh("neovim/nvim-lspconfig"),
 	gh("mason-org/mason.nvim"),
 	gh("mason-org/mason-lspconfig.nvim"),
-	gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
 })
 
 require("mason").setup({})
@@ -116,11 +115,4 @@ end
 
 require("mason-lspconfig").setup({
 	automatic_enable = true,
-})
-
--- Non-LSP tools you DO want auto-installed/kept up to date.
--- stylua is a formatter, not an LSP server, so it can't go through
--- mason-lspconfig above — it needs mason-tool-installer instead.
-require("mason-tool-installer").setup({
-	ensure_installed = { "stylua", "clangd" },
 })
