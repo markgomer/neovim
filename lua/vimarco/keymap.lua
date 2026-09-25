@@ -48,3 +48,21 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window He
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+
+
+local function do_open(uri)
+    local _, err = vim.ui.open(uri)
+    if err then
+        vim.notify(err, vim.log.levels.ERROR)
+    end
+end
+
+vim.keymap.set({ 'n' }, 'gx', function()
+    do_open(vim.fn.expand('<cfile>'))
+end, { desc = gx_desc })
+
+
+
+
+
