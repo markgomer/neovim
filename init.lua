@@ -7,6 +7,10 @@ vim.pack.add { gh 'nvim-tree/nvim-web-devicons' }
 
 vim.pack.add({ gh 'nvim-mini/mini.nvim' })
 
+vim.pack.add({ 'https://github.com/RRethy/base16-nvim' })
+local ok, matugen = pcall(require, 'matugen')
+if ok then matugen.setup() end
+
 require("vimarco.options")
 require("vimarco.keymap")
 require("vimarco.theme")

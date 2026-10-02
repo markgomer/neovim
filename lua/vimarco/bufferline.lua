@@ -27,28 +27,57 @@ local bufferline_opts = {
 
 require("bufferline").setup(bufferline_opts)
 
-vim.g.transparent_groups = vim.list_extend(
-  vim.g.transparent_groups or {},
-  vim.tbl_map(function(v)
-    return v.hl_group
-  end, vim.tbl_values(require('bufferline.config').highlights))
+-- NOTE: PIN
+vim.keymap.set(
+    "n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>",
+    { desc = "Pin buffer" }
+)
+vim.keymap.set(
+    "n", "<leader>p", "<cmd>BufferLineTogglePin<cr>",
+    { desc = "Pin buffer" }
+)
+-- NOTE: CYCLE
+vim.keymap.set(
+    "n", "<S-H>", "<cmd>BufferLineCyclePrev<cr>",
+    { desc = "Left buffer" }
+)
+vim.keymap.set(
+    "n", "<S-L>", "<cmd>BufferLineCycleNext<cr>",
+    { desc = "Right buffer" }
+)
+-- NOTE: MOVE
+vim.keymap.set(
+    "n", "<leader>bh", "<cmd>BufferLineMovePrev<cr>",
+    { desc = "Move buffer left" }
+)
+vim.keymap.set(
+    "n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>",
+    { desc = "Move buffer right" }
+)
+-- NOTE: DELETE
+vim.keymap.set(
+    "n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>",
+    { desc = "Close other buffers" }
+)
+vim.keymap.set(
+    "n", "<leader>bd", "<cmd>bdelete<cr>",
+    { desc = "Delete buffer" }
 )
 
--- NOTE: PIN
-vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
-vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
--- NOTE: CYCLE
-vim.keymap.set("n", "<S-H>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Left buffer" })
-vim.keymap.set("n", "<S-L>", "<cmd>BufferLineCycleNext<cr>", { desc = "Right buffer" })
--- NOTE: MOVE
-vim.keymap.set("n", "<leader>bh", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
-vim.keymap.set("n", "<leader>bl", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
--- NOTE: DELETE
-vim.keymap.set("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close other buffers" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
-
 -- NOTE: JUMP
-vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Go to buffer 1" })
-vim.keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Go to buffer 2" })
-vim.keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Go to buffer 3" })
-vim.keymap.set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Go to buffer 4" })
+vim.keymap.set(
+    "n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<cr>",
+    { desc = "Go to buffer 1" }
+)
+vim.keymap.set(
+    "n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<cr>",
+    { desc = "Go to buffer 2" }
+)
+vim.keymap.set(
+    "n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<cr>",
+    { desc = "Go to buffer 3" }
+)
+vim.keymap.set(
+    "n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<cr>",
+    { desc = "Go to buffer 4" }
+)

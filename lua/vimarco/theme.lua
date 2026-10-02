@@ -4,7 +4,7 @@ vim.pack.add({ gh("rose-pine/neovim") })
 vim.pack.add({ gh("catppuccin/nvim") })
 vim.pack.add({ gh("ellisonleao/gruvbox.nvim") })
 
-local ACTIVE_THEME = "tokyonight"
+local ACTIVE_THEME = "base16-kanagawa"
 
 require("kanagawa").setup({
     terminalColors = true,
@@ -121,4 +121,4 @@ require("gruvbox").setup({
 	},
 })
 
-vim.cmd.colorscheme(ACTIVE_THEME)
+-- vim.cmd.colorscheme(ACTIVE_THEME)

@@ -31,6 +31,7 @@ require("transparent").setup({
         "Float",
 		"FloatBorder",
 		"FloatTitle",
+		"TablineSel",
 		"TablineFill",
         "StatusLineTerm",
         "MiniStatuslineFilename",
@@ -46,5 +47,6 @@ require("transparent").setup({
 	--    end,
 })
 
+require('transparent').clear_prefix('BufferLine')
 -- require('transparent').clear_prefix("MiniStatuslineFilename")
 -- require('transparent').clear_prefix("MiniStatuslineInactive")
