@@ -27,6 +27,13 @@ local bufferline_opts = {
 
 require("bufferline").setup(bufferline_opts)
 
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  vim.tbl_map(function(v)
+    return v.hl_group
+  end, vim.tbl_values(require('bufferline.config').highlights))
+)
+
 -- NOTE: PIN
 vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
 vim.keymap.set("n", "<leader>p", "<cmd>BufferLineTogglePin<cr>", { desc = "Pin buffer" })
