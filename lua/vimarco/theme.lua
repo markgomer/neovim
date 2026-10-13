@@ -121,4 +121,4 @@ require("gruvbox").setup({
 	},
 })
 
--- vim.cmd.colorscheme(ACTIVE_THEME)
+vim.cmd.colorscheme(ACTIVE_THEME)

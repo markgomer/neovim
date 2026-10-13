@@ -5,6 +5,7 @@ vim.opt.conceallevel = 2
 vim.opt.number = true -- line number
 vim.o.relativenumber = false
 vim.opt.cursorline = false
+vim.o.undofile = true
 
 vim.opt.clipboard = ""
 

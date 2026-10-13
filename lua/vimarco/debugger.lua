@@ -13,6 +13,7 @@ vim.pack.add {
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/jay-babu/mason-nvim-dap.nvim',
     'https://github.com/leoluz/nvim-dap-go',
+    'https://github.com/theHamsta/nvim-dap-virtual-text',
 }
 
 -- Basic debugging keymaps, feel free to change to your liking!
@@ -86,6 +87,8 @@ end
 dap.listeners.after.event_initialized['dapui_config'] = dapui.open
 dap.listeners.before.event_terminated['dapui_config'] = dapui.close
 dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+require('nvim-dap-virtual-text').setup {}
 
 -- Install golang specific config
 -- require('dap-go').setup {

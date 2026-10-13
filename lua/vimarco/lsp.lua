@@ -49,7 +49,7 @@ local servers = {
 	gopls = {
 		-- Explicit path avoids PATH/shim ambiguity between asdf and Mason.
 		-- Update this if you bump your asdf golang version.
-		cmd = { vim.fn.expand("$HOME/.local/share/asdf-vm/installs/golang/1.26.3/bin/gopls") },
+		-- cmd = { vim.fn.expand("$HOME/.local/share/asdf-vm/installs/golang/1.26.3/bin/gopls") },
 	},
 	clangd = {
     	cmd = {
