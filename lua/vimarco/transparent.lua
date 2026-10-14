@@ -48,5 +48,7 @@ require("transparent").setup({
 })
 
 require('transparent').clear_prefix('BufferLine')
+require('transparent').clear_prefix('GitSigns')
+
 -- require('transparent').clear_prefix("MiniStatuslineFilename")
 -- require('transparent').clear_prefix("MiniStatuslineInactive")

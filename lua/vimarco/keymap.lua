@@ -28,6 +28,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
+-- paste over a selection without losing what you yanked
 vim.keymap.set("x", "p", [["_dP]])
 
 vim.keymap.set("n", "Q", "<nop>")
@@ -54,7 +55,7 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decreas
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 
-
+-- INFO: open internet links on the default internet browser
 local function do_open(uri)
     local _, err = vim.ui.open(uri)
     if err then
@@ -65,8 +66,3 @@ end
 vim.keymap.set({ 'n' }, 'gx', function()
     do_open(vim.fn.expand('<cfile>'))
 end, { desc = gx_desc })
-
-
-
-
-
