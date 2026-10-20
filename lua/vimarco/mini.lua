@@ -30,6 +30,7 @@ statusline.setup({
             local diff = MiniStatusline.section_diff({ trunc_width = 75 })
             local diag = MiniStatusline.section_diagnostics({
                 trunc_width = 75,
+                icon = "",
                 signs = {
                     ERROR = " ", WARN  = " ", HINT  = " ", INFO  = " ",
                 },
