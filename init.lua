@@ -13,7 +13,7 @@ if ok then matugen.setup() end
 
 require("vimarco.options")
 require("vimarco.keymap")
--- require("vimarco.theme")
+require("vimarco.theme")
 
 require("vimarco.snacks")
 
