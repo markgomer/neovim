@@ -43,6 +43,18 @@ require("snacks").setup({
             -- explorer = {layout = {layout = {width = 25, min_width = 25}}},
             files = { hidden = true, ignored = false, },
             grep = { hidden = true, ignored = false, },
+            buffers = {
+                sort_lastused = false,
+                format = function(item, picker)
+                    local ret = Snacks.picker.format.buffer(item, picker)
+                    local ordinal
+                    for i, c in ipairs(require("bufferline.state").components) do
+                        if c.id == item.buf then ordinal = i break end
+                    end
+                    ret[1] = { string.format("%3s ", ordinal or "-"), "SnacksPickerBufNr" }
+                    return ret
+                end
+            },
         },
     },
     quickfile = { enabled = true },
