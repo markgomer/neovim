@@ -54,6 +54,8 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window 
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Equalize Windows" })
+vim.keymap.set("n", "<leader>wm", "<C-w>_<C-w>|", { desc = "Maximize Window" })
 
 -- INFO: open internet links on the default internet browser
 local function do_open(uri)
