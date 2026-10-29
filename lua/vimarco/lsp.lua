@@ -54,7 +54,7 @@ local servers = {
 	clangd = {
     	cmd = {
             "clangd",
-            "--query-driver=/nix/store/**/bin/gcc,/nix/store/**/bin/*-gcc",
+            "--query-driver=/nix/store/*/bin/clang*", -- or gcc
         },
     },
 	-- ts_ls = {},
