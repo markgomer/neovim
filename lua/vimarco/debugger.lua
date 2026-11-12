@@ -99,3 +99,13 @@ require('nvim-dap-virtual-text').setup {}
 --     },
 -- }
 
+vim.api.nvim_create_autocmd('VimResized', {
+  callback = function()
+    for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+      if vim.bo[vim.api.nvim_win_get_buf(w)].filetype:match '^dapui_' then
+        require('dapui').open { reset = true }
+        return
+      end
+    end
+  end,
+})
