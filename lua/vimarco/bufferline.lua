@@ -11,6 +11,11 @@ local bufferline_opts = {
             alphabet = "1234567890ABCDEF",
         },
         diagnostics = "nvim_lsp", 
+        groups = {
+            items = {
+                require('bufferline.groups').builtin.pinned:with({ icon = "󰐃" }),
+            }
+        },
 
         -- This function now works because diagnostics are enabled
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
