@@ -29,7 +29,7 @@ vim.opt.shiftwidth = tabstop
 vim.opt.expandtab = true -- Use spaces instead of tabs by default
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "dart",  },
+  pattern = { "dart", "nix", "tsx", "jsx", "lua" },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
