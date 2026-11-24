@@ -5,7 +5,7 @@ vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.conceallevel = 2
 vim.opt.number = true -- line number
-vim.o.relativenumber = false
+vim.o.relativenumber = true
 vim.opt.cursorline = false
 vim.o.undofile = true
 
