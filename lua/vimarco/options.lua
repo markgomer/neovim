@@ -1,25 +1,21 @@
-vim.opt.hlsearch = false -- highlight search
 vim.opt.colorcolumn = "80" -- the limit black bar
-vim.opt.wrap = true
-vim.opt.linebreak = true
-vim.opt.breakindent = true
 vim.opt.conceallevel = 2
+vim.opt.cursorline = false
 vim.opt.number = true -- line number
 vim.o.relativenumber = true
-vim.opt.cursorline = false
 vim.o.undofile = true
+vim.o.scrolloff = 6
+
+vim.opt.hlsearch = false -- highlight search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.clipboard = ""
-
-vim.o.scrolloff = 6
 
 vim.opt.laststatus = 3 -- global statusline
 vim.opt.showmode = false -- Dont show mode since we have a statusline
 
 vim.opt.termguicolors = true
-
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
 
 -- Tabulation
 local tabstop = 4
@@ -27,6 +23,9 @@ vim.opt.tabstop = tabstop
 vim.opt.softtabstop = tabstop
 vim.opt.shiftwidth = tabstop
 vim.opt.expandtab = true -- Use spaces instead of tabs by default
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dart", "nix", "tsx", "jsx", "lua" },
